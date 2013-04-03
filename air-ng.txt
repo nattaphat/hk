@@ -20,15 +20,14 @@ http://www.aircrack-ng.org/doku.php?id=newbie_guide
 			$airodump-ng wlan0
 		ps: if msg show devise is busy be sure run 'ifconfig wlan0 down' and try again
 		result:
-			BSSID 	The MAC address of the AP
-			PWR 	Signal strength. Some drivers don't report it
-			Beacons 	Number of beacon frames received. If you don't have a signal strength you can estimate it by the number of beacons: the more 
-					 beacons, the better the signal quality
-			Data 	Number of data frames received
-			CH 		Channel the AP is operating on
-			MB 		Speed or AP Mode. 11 is pure 802.11b, 54 pure 802.11g. Values between are a mixture
-			ENC 	Encryption: OPN: no encryption, WEP: WEP encryption, WPA: WPA or WPA2 encryption, WEP?: WEP or WPA (don't know yet)
-			ESSID 	The network name. Sometimes hidden 
+			BSSID 		The MAC address of the AP
+			PWR 		Signal strength. Some drivers don't report it
+			Beacons 	Number of beacon frames received. If you don't have a signal strength you can estimate it by the number of beacons: 						the more beacons, the better the signal quality
+			Data 		Number of data frames received
+			CH 			Channel the AP is operating on
+			MB 			Speed or AP Mode. 11 is pure 802.11b, 54 pure 802.11g. Values between are a mixture
+			ENC 		Encryption: OPN: no encryption, WEP: WEP encryption, WPA: WPA or WPA2 encryption, WEP?: WEP or WPA (don't know yet)
+			ESSID 		The network name. Sometimes hidden 
 		
 		 the clients found: 
 			BSSID 		The MAC of the AP this client is associated to
@@ -37,8 +36,8 @@ http://www.aircrack-ng.org/doku.php?id=newbie_guide
 			Packets 		Number of data frames received
 			Probes 		Network names (ESSIDs) this client has probed 
 
-			In the example above the net 00:01:02:03:04:05 would be the only possible target because it's the only one with an associated client. 
-		But it also has a high signal strength so it's really a good target to practice.
+			In the example above the net 00:01:02:03:04:05 would be the only possible target because it's the only one with an 
+		associated client. But it also has a high signal strength so it's really a good target to practice.
 	
 	1.4 Sniffing IVs
 			Because of the channel hopping you won't capture all packets from your target net. So we want to listen just on one channel and 
@@ -47,10 +46,12 @@ http://www.aircrack-ng.org/doku.php?id=newbie_guide
 		
 		result:
 			 With the -c parameter you tune to a channel and the parameter after -w is the prefix to the network dumps written to disk. 
-		The ”--bssid” combined with the AP MAC address limits the capture to the one AP. The ”--bssid” option is only available on new versions of airodump-ng.
+		The ”--bssid” combined with the AP MAC address limits the capture to the one AP. The ”--bssid” option is only available 
+		on new versions of airodump-ng.
 			
 			Before being able to crack WEP you'll usually need between 40 000 and 85 000 different Initialization Vectors (IVs). Every data
-		 packet contains an IV. IVs can be re-used, so the number of different IVs is usually a bit lower than the number of data packets captured.
+		 packet contains an IV. IVs can be re-used, so the number of different IVs is usually a bit lower than the number of data packets
+		 captured.
 			
 			So you'll have to wait and capture 40K to 85K of data packets (IVs). If the network is not busy it will take a very long time. 
 		Often you can speed it up a lot by using an active attack (=packet replay). See the next chapter. 
@@ -58,3 +59,4 @@ http://www.aircrack-ng.org/doku.php?id=newbie_guide
 		PS:
 			How to see number of IV you can run 'cat dump-01.csv' and look at ',IV' column or look at '#Data'
 
+https://github.com/Visgean/Zeus.git
